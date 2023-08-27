@@ -51,6 +51,7 @@ void optimizedBubbleSort(int size, int arr[])
         if (!swapped)
             break;
     }
+    return;
 }
 
 int main()
