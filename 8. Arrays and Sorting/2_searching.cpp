@@ -12,18 +12,19 @@ int linearSearch(int size, int arr[], int key)
     return -1;
 }
 
+// Time Complexity - O(log n)
 int binarySearch(int size, int arr[], int key)
 {
-    int left = 0, right = size - 1, mid;
-    while (left <= right)
+    int start = 0, end = size - 1, mid;
+    while (start <= end)
     {
-        mid = left + (right - left) / 2;
+        mid = start + (end - start) / 2;
         if (arr[mid] == key)
             return mid;
         else if (key > arr[mid])
-            left = mid + 1;
+            start = mid + 1;
         else
-            right = mid - 1;
+            end = mid - 1;
     }
     return -1;
 }
