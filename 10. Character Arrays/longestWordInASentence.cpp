@@ -3,13 +3,16 @@ using namespace std;
 
 int longestWord(int size, char arr[])
 {
-    int currentLength = 0, maxLength = 0, i = 0;
+    int currentLength = 0, maxLength = 0, i = 0, startOfNextWord = 0, maxWordStart = 0;
+    ;
     while (1)
     {
         if (arr[i] == ' ' || arr[i] == '\0')
         {
             maxLength = max(maxLength, currentLength);
+            maxWordStart = startOfNextWord;
             currentLength = 0;
+            startOfNextWord = i + 1;
         }
         else
             currentLength++;
@@ -17,6 +20,10 @@ int longestWord(int size, char arr[])
             break;
         i++;
     }
+    cout << "The longest word in the sentence is: ";
+    for (int j = 0; j < maxLength; j++)
+        cout << arr[maxWordStart + j];
+    cout << endl;
     return maxLength;
 }
 
