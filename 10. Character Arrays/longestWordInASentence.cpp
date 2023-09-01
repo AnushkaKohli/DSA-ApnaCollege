@@ -4,7 +4,6 @@ using namespace std;
 int longestWord(int size, char arr[])
 {
     int currentLength = 0, maxLength = 0, i = 0, startOfNextWord = 0, maxWordStart = 0;
-    ;
     while (1)
     {
         if (arr[i] == ' ' || arr[i] == '\0')
