@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+// Time Complexity: O(n^2)
+// Space Complexity: O(n^2)
 void reverseString(string s)
 {
     if (s.length() == 0)
