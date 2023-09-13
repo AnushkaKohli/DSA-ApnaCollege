@@ -1,6 +1,11 @@
 #include <iostream>
 using namespace std;
 
+// Time Complexity:
+// Best Case: O(nlogn)
+// Worst Case: O(nlogn)
+// Average Case: O(nlogn)
+// Space Complexity: O(n)
 void merge(int arr[], int left, int mid, int right)
 {
     // Size of left and right subarray
