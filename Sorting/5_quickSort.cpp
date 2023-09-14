@@ -43,7 +43,7 @@ int main()
     for (int i = 0; i < numOfElements; i++)
         cout << arr[i] << " ";
     cout << endl;
-    cout << "Elements after sorting using merge sort: ";
+    cout << "Elements after sorting using quick sort: ";
     quickSort(arr, 0, numOfElements - 1);
     for (int i = 0; i < numOfElements; i++)
         cout << arr[i] << " ";
