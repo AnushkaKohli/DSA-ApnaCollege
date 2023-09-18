@@ -8,9 +8,9 @@ int kadane(int size, int arr[])
     for (int i = 0; i < size; i++)
     {
         maxAtCurrentIndex += arr[i];
+        maxSum = max(maxSum, maxAtCurrentIndex);
         if (maxAtCurrentIndex < 0)
             maxAtCurrentIndex = 0;
-        maxSum = max(maxSum, maxAtCurrentIndex);
     }
     return maxSum;
 }
