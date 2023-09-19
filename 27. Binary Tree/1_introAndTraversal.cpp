@@ -15,6 +15,33 @@ struct Node
     }
 };
 
+void preorder(struct Node *root)
+{
+    if (root == NULL)
+        return;
+    cout << root->data << " ";
+    preorder(root->left);
+    preorder(root->right);
+}
+
+void inorder(struct Node *root)
+{
+    if (root == NULL)
+        return;
+    inorder(root->left);
+    cout << root->data << " ";
+    inorder(root->right);
+}
+
+void postorder(struct Node *root)
+{
+    if (root == NULL)
+        return;
+    postorder(root->left);
+    postorder(root->right);
+    cout << root->data << " ";
+}
+
 int main()
 {
     /*
@@ -36,5 +63,14 @@ int main()
     root->left->right = new Node(5);
     root->right->left = new Node(6);
     root->right->right = new Node(7);
+    cout << "Preorder traversal: ";
+    preorder(root);
+    cout << endl;
+    cout << "Inorder traversal: ";
+    inorder(root);
+    cout << endl;
+    cout << "Postorder traversal: ";
+    postorder(root);
+    cout << endl;
     return 0;
 }
