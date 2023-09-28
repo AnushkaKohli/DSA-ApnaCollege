@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-// Time complexity: O(32n) = O(n)
+// Time complexity: = O(n^2)
 // Space complexity: O(32) = O(1)
 int unique(int size, int arr[])
 {
