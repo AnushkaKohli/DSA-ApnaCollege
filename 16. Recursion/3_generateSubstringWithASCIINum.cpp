@@ -10,8 +10,8 @@
 #include <iostream>
 using namespace std;
 
-// Time complexity: O(2^n) because for each character, we have two choices, either we include it or not.
-// Space complexity: O(2^n) because for each character, we have two choices, either we include it or not.
+// Time complexity: O(3^n) because for each character, we have three choices, either we include it or not or add ascii value.
+// Space complexity: O(3^n) because for each character, we have three choices, either we include it or not or add ascii value.
 void subsequence(string s, string ans)
 {
     if (s.length() == 0)
