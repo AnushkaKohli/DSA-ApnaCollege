@@ -11,10 +11,16 @@ void towerOfHanoi(int numOfDisks, char src, char dest, char helper)
 {
     if (numOfDisks == 0)
         return;
+    towerOfHanoi(numOfDisks - 1, src, helper, dest);
+    cout << "Move disk " << numOfDisks << " from " << src << " to " << dest << endl;
+    towerOfHanoi(numOfDisks - 1, helper, dest, src);
 }
 
 int main()
 {
-
+    int numOfDisks;
+    cout << "Enter the number of disks: ";
+    cin >> numOfDisks;
+    towerOfHanoi(numOfDisks, 'A', 'C', 'B');
     return 0;
 }
