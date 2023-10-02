@@ -43,6 +43,7 @@ public:
     {
         cout << "Destructor called" << endl;
     }
+    // Operator overloading
     bool operator==(Student &a)
     {
         if (age = a.age && gender == a.gender)
