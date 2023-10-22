@@ -28,6 +28,15 @@ Node *reverseLL(Node *&head)
     return prevPtr;
 }
 
+Node *reverseRecursive(Node *&head){
+    if(head == NULL || head-> next == NULL)
+        return head;
+    Node *newHead = reverseRecursive(head->next);
+    head->next->next = head;
+    head->next = NULL;
+    return newHead;
+}
+
 void insertAtHead(Node *&head, int value)
 {
     // Create a new node with data = value
@@ -63,7 +72,9 @@ int main()
     insertAtHead(head, 2);
     insertAtHead(head, 3);
     display(head);
-    Node *newHead = reverseLL(head);
+    // Node *newHead = reverseLL(head);
+    // display(newHead);
+    Node *newHead = reverseRecursive(head);
     display(newHead);
     return 0;
 }

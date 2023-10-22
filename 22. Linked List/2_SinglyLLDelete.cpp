@@ -25,14 +25,14 @@ void deleteAtHead(Node *&head)
 void deleteAtTail(Node *&head){
     if(head == NULL)
         return;
-    Node *temp = head;
+    Node *nodeToDelete = head;
     Node *preptr;
-    while(temp->next != NULL){
-        preptr = temp;
-        temp = temp->next;
+    while(nodeToDelete->next != NULL){
+        preptr = nodeToDelete;
+        nodeToDelete = nodeToDelete->next;
     }
     preptr->next = NULL;
-    delete temp;
+    delete nodeToDelete;
 }
 
 void deleteGivenValue(Node *&head, int value)
