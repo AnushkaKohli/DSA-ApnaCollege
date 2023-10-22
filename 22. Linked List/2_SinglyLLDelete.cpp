@@ -22,6 +22,19 @@ void deleteAtHead(Node *&head)
     delete nodeToDelete;
 }
 
+void deleteAtTail(Node *&head){
+    if(head == NULL)
+        return;
+    Node *temp = head;
+    Node *preptr;
+    while(temp->next != NULL){
+        preptr = temp;
+        temp = temp->next;
+    }
+    preptr->next = NULL;
+    delete temp;
+}
+
 void deleteGivenValue(Node *&head, int value)
 {
     if (head == NULL)
@@ -77,7 +90,9 @@ int main()
     insertAtHead(head, 2);
     insertAtHead(head, 3);
     display(head);
-    deleteGivenValue(head, 2);
+    // deleteGivenValue(head, 2);
+    // deleteAtHead(head);
+    deleteAtTail(head);
     display(head);
     return 0;
 }
