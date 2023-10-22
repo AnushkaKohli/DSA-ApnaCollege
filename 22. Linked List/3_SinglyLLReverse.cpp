@@ -37,6 +37,25 @@ Node *reverseRecursive(Node *&head){
     return newHead;
 }
 
+Node *reverseKNodes(Node *&head, int k){
+    if (head == NULL)
+        return NULL;
+    Node *prevPtr = NULL;
+    Node *currPtr = head;
+    Node *nextPtr;
+    int count = 0;
+    while(currPtr != NULL && count < k){
+        nextPtr = currPtr->next;
+        currPtr->next = prevPtr;
+        prevPtr = currPtr;
+        currPtr = nextPtr;
+        count++;
+    }
+    if(nextPtr != NULL)
+        head->next = reverseKNodes(nextPtr, k);
+    return prevPtr;
+}
+
 void insertAtHead(Node *&head, int value)
 {
     // Create a new node with data = value
@@ -71,10 +90,16 @@ int main()
     insertAtHead(head, 1);
     insertAtHead(head, 2);
     insertAtHead(head, 3);
+    insertAtHead(head, 4);
+    insertAtHead(head, 5);
     display(head);
     // Node *newHead = reverseLL(head);
     // display(newHead);
-    Node *newHead = reverseRecursive(head);
+
+    // Node *newHead = reverseRecursive(head);
+    // display(newHead);
+
+    Node *newHead = reverseKNodes(head, 3);
     display(newHead);
     return 0;
 }
