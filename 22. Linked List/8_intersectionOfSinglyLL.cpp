@@ -57,12 +57,11 @@ int isIntersection(Node *&head1, Node *&head2)
         ptr1 = head2;
         ptr2 = head1;
     }
-    while (difference)
+    while (difference--)
     {
         ptr1 = ptr1->next;
         if (ptr1 == NULL)
             return -1;
-        difference--;
     }
     while (ptr1 != NULL && ptr2 != NULL)
     {
@@ -129,6 +128,6 @@ int main()
     intersect(head1, head2, 5);
     display(head1);
     display(head2);
-    cout << isIntersection(head1, head2) << endl;
+    cout << "Intersection point of the two linked lists is: " << isIntersection(head1, head2) << endl;
     return 0;
 }
