@@ -57,15 +57,16 @@ Node *mergeRecursive(Node *head1, Node *head2)
         return head2;
     if (head2 == NULL)
         return head1;
+    Node *result;
     if (head1->data <= head2->data)
     {
-        head1->next = mergeRecursive(head1->next, head2);
-        return head1;
+        result = head1;
+        result->next = mergeRecursive(head1->next, head2);
     }
     else
     {
-        head2->next = mergeRecursive(head1, head2->next);
-        return head2;
+        result = head2;
+        result->next = mergeRecursive(head1, head2->next);
     }
 }
 
